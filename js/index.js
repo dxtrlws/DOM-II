@@ -18,6 +18,18 @@ domImages.forEach(domImage => {
             domImage.setAttribute('src','img/fun.jpg');
         }
     })
-})
+});
 
+// Resize - change background color of paragraph
+window.addEventListener('resize',() => {
+    const contentDestination = document.querySelector('.content-destination p');
+    contentDestination.style.color = 'rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
+} )
 
+const random = (min, max) =>{
+    let rand = min + Math.random()*(max+1-min);
+    rand = rand^0; 
+    return rand;
+  }
+
+  
