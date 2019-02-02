@@ -25,12 +25,20 @@ window.addEventListener("resize", () => {
     "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
 });
 
-// Scroll
+// Scroll - changes color on the intro paragraph
 window.addEventListener("scroll", () => {
   const intro = document.querySelector(".intro p");
   intro.style.color =
     "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
 });
+
+// keydown - removes paragraph and bring it back
+const contentP = document.querySelector('.content-section .text-content p');
+window.addEventListener('keydown', e => {
+    e.stopPropagation();
+    contentP.textContent = 'Oh know, you removed this paragraph!'
+});
+
 
 // helper function
 const random = (min, max) => {
