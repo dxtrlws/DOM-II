@@ -5,8 +5,25 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => {
   button.addEventListener("mouseover", e => {
     e.target.style.backgroundColor = "red";
+    e.target.style.color = "white";
+
   });
 });
+
+// Mouseout {
+  buttons.forEach(button => {
+    button.addEventListener('mouseout', e => {
+      e.target.style.backgroundColor = '#17A2B8'
+    })
+  } )
+
+
+// click - click button to launch alert that you are signed up
+buttons.forEach(button => {
+  button.addEventListener('click', e => {
+    alert(`You're all signed up!`);
+  })
+})
 
 // Dblclick - toggle images in content section
 const domImages = document.querySelectorAll(".img-content img");
@@ -33,11 +50,34 @@ window.addEventListener("scroll", () => {
 });
 
 // keydown - removes paragraph and bring it back
-const contentP = document.querySelector('.content-section .text-content p');
-window.addEventListener('keydown', e => {
-    e.stopPropagation();
-    contentP.textContent = 'Oh know, you removed this paragraph!'
+const contentP = document.querySelector(".content-section .text-content p");
+window.addEventListener("keydown", e => {
+  e.stopPropagation();
+  contentP.textContent = "Oh know, you removed this paragraph!";
 });
+
+// Load - replaced image on page load
+window.addEventListener("load", () => {
+  const contentDestination = document.querySelector(".content-destination img");
+  contentDestination.setAttribute(
+    "src",
+    "https://via.placeholder.com/600x200?text=This+image+was+replaced+via+load"
+  );
+});
+
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+  link.addEventListener('mouseover', (e) => {
+    e.target.style.textDecoration = 'underline';
+  })
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('mouseout', (e) => {
+    e.target.style.textDecoration = 'none';
+  })
+})
+
 
 
 // helper function
